@@ -1,10 +1,31 @@
+/* Base */
+@font-face {
+  font-family: CarolynaProBlack;
+  src: url(fonts/carolyna-pro-black.otf);
+}
+
+html,
 body {
+  height: 100%;
+  background-color: #e8dbca;
+  background: url("../img/bg.png") repeat;
+}
+
+body {
+  color: #000;
   display: block;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Georgia,Cambria,"Times New Roman",Times,serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: .01rem;
+  /*letter-spacing: -0.003em;*/
+  line-height: 1.58;
   margin: 0;
   position: relative;
 }
+
 h1, h2, h3, h4 {
+  color: #000;
   font-family: 'Muli', sans-serif;
   font-weight: 300;
   margin: 0;
@@ -12,13 +33,8 @@ h1, h2, h3, h4 {
 }
 h2 {
   text-align: center;
-  color: #001b7d;
-  color: #fff;
 }
 h3 {
-  color: #424242;
-  color: #F5EACF;
-  color: #fff;
   padding: 0;
   text-align: center;
 }
@@ -26,13 +42,19 @@ h4 {
   padding: 0;
   text-align: left;
 }
+
 table {
-  color: #CEB793;
   color: #fff;
+  margin-bottom: 10px;
+  vertical-align: top;
+  width: 100%;
 }
-a {
-  color: #fff;
+
+table h3 {
+  margin: 0;
 }
+
+/* Photo Container */
 #photo-container {
   bottom: 0;
   height: 100%;
@@ -42,61 +64,121 @@ a {
   top: 0;
   width: 60%;
 }
-/*#photo-container .photo {
-  background-image: url('file:///Users/dominick/Desktop/michaelandjackie/img/tanaka_farms.jpg');
-  background-position: center center;
+
+.cover-wrapper {
+  background: url("../img/engage_crop.jpg") center;
   background-size: cover;
+  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+  box-shadow: inset 0 0 100px rgba(0,0,0,.5);
   height: 100%;
-  position: absolute;;
+  min-height: 100%;
+  opacity: 1;
+  position: absolute;
+  transition: opacity 2s ease-in-out;
+  -moz-transition: opacity 2s ease-in-out;
+  -webkit-transition: opacity 2s ease-in-out;
   width: 100%;
-}*/
+}
+.cover-wrapper.hidden {
+  opacity: 0;
+}
+#cover-wrapper-wedding-day {
+  background: url("../img/engage_crop.jpg") center;
+  background-size: cover;
+}
+#cover-wrapper-our-story {
+  background: url("../img/tanaka_farms.jpg") center;
+  background-size: cover;
+}
+#cover-wrapper-travel {
+  background: url("../img/doges.jpg") center;
+  background-size: cover;
+}
+#cover-wrapper-faqs {
+  background: url("../img/klondike.jpg") center;
+  background-size: cover;
+}
+#cover-wrapper-registry {
+  background: url("../img/huntington.jpg") center;
+  background-size: cover;
+}
+
+.site-wrapper-inner {
+  vertical-align: top;
+}
+
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.cover {
+  padding: 20px;
+}
+
+.cover-heading {
+  font-family: CarolynaProBlack;
+  transform: rotate(-10deg);
+  display: block;
+  font-size: 81px;
+  width: 300px;
+  color: #fff;
+  text-shadow: 2px 2px 4px #000;
+}
+.cover-heading .first {
+  display: block;
+}
+.cover-heading .middle {
+  display: block;
+  margin-top: -27px;
+}
+.cover-heading .second {
+  display: block;
+  margin-left: 36px;
+  margin-top: -81px;
+}
+
+/* Nav */
 #links {
-  background-color: #444;
-  /*color: #e8dbca;*/
+  background-color: #357;
   color: #fff;
   position: fixed;
   right: 0;
   left: 60%;
-  height: 50px;
+  height: 54px;
+}
+#links li {
+  display: inline-block;
+  line-height: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 #links a {
   color: #fff;
-  text-decoration: none;
+  padding-right: 0;
+  padding-left: 0;
+  font-family: 'Muli', sans-serif;
+  font-size: 16px;
 }
+#links a.active,
+#links a.active:hover,
+#links a.active:focus {
+  font-size: 17px;
+  font-weight: bold;
+}
+
 nav {
   height: 100%;
 }
+
 .mast-nav {
   height: 100%;
   vertical-align: middle;
   align-items: center;
   justify-content: center;
 }
-/*#photo-container h1 {
-  bottom: 112px;
-  color: #fff;
-  font-size: 60px;
-  line-height: 70px;
-  left: 72px;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  text-shadow: 2px 2px 4px #000;
-  .mast-nav {}
-}
 
-#photo-container h2 {
-  bottom: 72px;
-  color: #fff;
-  font-size: 24px;
-  line-height: 28px;
-  left: 72px;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  text-align: right;
-  text-shadow: 2px 2px 4px #000;
-}*/
+/* Info */
 #info {
   background-color: #e8dbca;
   background: url("../img/bg.png") repeat;
@@ -105,12 +187,24 @@ nav {
   position: static;
   width: 40%;
 }
+.section {
+  min-height: 100vh;
+}
+.section-container {
+  padding: 54px 48px 48px;
+}
+.section-header {
+  margin: 12px 0;
+}
+
+/* Wedding Day */
 #wedding-day {
   text-align: center;
 }
 #wedding-day h3 {
   text-align: center;
 }
+
 #wedding-date {
   font-family: CarolynaProBlack;
   font-size: 48px;
@@ -121,23 +215,37 @@ nav {
 #wedding-date span {
   vertical-align: middle;
 }
+
+.wedding-date-separator {
+  margin: 0 -10px;
+}
+
 #day-of-week {
   margin: 12px 0 0;
 }
+
 #day-of-month {
   font-size: 96px;
   line-height: 48px;
   vertical-align: middle;
 }
-.wedding-date-separator {
-  margin: 0 -10px;
-}
+
 #wedding-venue {
   font-size: 21px;
   margin-top: 20px;
   text-align: center;
 }
 
+#map {
+  margin-top: 40px;
+}
+
+.mapview {
+  height: 360px;
+  width: 100%;
+}
+
+/* TRAVEL */
 #travel-table {
   width: 100%;
   color: #000;
@@ -147,11 +255,13 @@ nav {
 #travel-table h4 {
   margin: 0;
 }
+
 .travel-icon {
   height: 30px;
   width: 30px;
 }
 
+/* FAQs */
 #faqs-table {
   width: 100%;
   color: #000;
@@ -161,48 +271,12 @@ nav {
 .faq {
   font-weight: bold;
 }
-table h3 {
-  margin: 0;
-}
-
-table {
-  /*text-align: center;*/
-  vertical-align: top;
-  width: 100%;
-  margin-bottom: 10px;
-}
-.wedding-day-table-header-title-td {
-  padding-right: 20px;
-}
-.wedding-day-table-header-line-td {
-  width: 100%;
-}
-.wedding-day-table-header-line {
-  background-color: rgb(232, 232, 232);
-  display: block;
-  height: 1px;
-  width: 100%;
-}
-
-#event-map {
-  margin: 10px 0;
-}
-.section {
-  /*border-bottom: 1px solid #E0E0E0;*/
-  min-height: 100vh;
-}
-.section-container {
-  padding: 48px;
-}
-.section-header {
-  margin: 12px 0;
-}
 
 @media only screen and (max-width: 960px) {
   #photo-container {
     width: 100%;
     position: relative;
-    top: 50px;
+    top: 54px;
   }
   #info {
     position: relative;
@@ -212,5 +286,134 @@ table {
     left: 0;
     width: 100%;
     top: 0;
+  }
+/*  #links a {
+    text-decoration: underline;
+  }*/
+}
+
+/* Small */
+@media only screen and (max-width: 1200px) {
+  body {
+    font-size: 18px;
+  }
+
+  .cover-heading {
+    font-size: 72px;
+  }
+  .cover-heading .middle {
+    margin-top: -24px;
+  }
+  .cover-heading .second {
+    margin-left: 32px;
+    margin-top: -72px;
+  }
+
+  #links a {
+    font-size: 16px;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  h4 {
+    font-size: 1.25rem;
+  }
+}
+
+/* X-Small */
+@media (min-width: 960px) and (max-width: 1200px) {
+  .mast-nav li {
+    margin-left: 0 !important;
+    text-align: center;
+  }
+
+  .mast-nav li:nth-child(1), .mast-nav li:nth-child(2) {
+    width: 49%;
+  }
+
+  .mast-nav li:nth-child(3), .mast-nav li:nth-child(4), .mast-nav li:nth-child(5) {
+    width: 32%;
+  }
+}
+
+@media (max-width: 630px) {
+  .cover-heading {
+    font-size: 63px;
+  }
+  .cover-heading .middle {
+    margin-top: -21px;
+  }
+  .cover-heading .second {
+    margin-left: 28px;
+    margin-top: -63px;
+  }
+}
+
+@media (max-width: 540px) {
+  .cover-heading {
+    font-size: 54px;
+  }
+  .cover-heading .middle {
+    margin-top: -18px;
+  }
+  .cover-heading .second {
+    margin-left: 24px;
+    margin-top: -54px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mast-nav li {
+    margin-left: 0 !important;
+    text-align: center;
+  }
+
+  .mast-nav li:nth-child(1), .mast-nav li:nth-child(2) {
+    width: 49%;
+  }
+
+  .mast-nav li:nth-child(3), .mast-nav li:nth-child(4), .mast-nav li:nth-child(5) {
+    width: 32%;
+  }
+
+  #wedding-date {
+    font-size: 36px;
+  }
+  #day-of-month {
+    font-size: 72px;
+    line-height: 36px;
+  }
+  .section-container {
+    padding: 54px 36px 36px;
+  }
+}
+
+@media (max-width: 450px) {
+  .cover-heading {
+    font-size: 45px;
+  }
+  .cover-heading .middle {
+    margin-top: -15px;
+  }
+  .cover-heading .second {
+    margin-left: 20px;
+    margin-top: -45px;
+  }
+}
+
+@media (max-width: 360px) {
+  .cover-heading {
+    font-size: 36px;
+  }
+  .cover-heading .middle {
+    margin-top: -12px;
+  }
+  .cover-heading .second {
+    margin-left: 16px;
+    margin-top: -36px;
   }
 }

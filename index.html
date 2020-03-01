@@ -6,17 +6,102 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   </head>
-  <link rel="stylesheet" type="text/css" href="css/main.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="css/phulisa.css">
-  <link rel="stylesheet" href="css/sm.css">
-  <link rel="stylesheet" href="css/xs.css">
-  <link href="https://fonts.googleapis.com/css?family=Muli|Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+  <script>
+    function activateSection(sectionId) {
+      var coverWrapper = document.getElementById('cover-wrapper-' + sectionId);
+      if (coverWrapper.classList.contains('hidden')) {
+        coverWrapper.classList.remove('hidden');
+      }
+      document.getElementById(sectionId + '-link').classList.add('active');
+    }
+    function deactivateSection(sectionId) {
+      var coverWrapper = document.getElementById('cover-wrapper-' + sectionId);
+      if (!coverWrapper.classList.contains('hidden')) {
+        coverWrapper.classList.add('hidden');
+      }
+      document.getElementById(sectionId + '-link').classList.remove('active');
+    }
+    function updateCoverPhoto() {
+      var sectionIds = ['wedding-day', 'our-story', 'travel', 'faqs', 'registry'];
+      for (var i = sectionIds.length - 1; i >= 0; i--) {
+        var sectionId = sectionIds[i];
+        var section = document.getElementById(sectionId);
+        if (section.getClientRects()[0].y <= 50) {
+          activateSection(sectionId);
+          for (var j = 0; j < sectionIds.length; j++) {
+            if (j == i) {
+              continue;
+            }
+            deactivateSection(sectionIds[j]);
+          }
+          return;
+        }
+      }
+      document.getElementById(sectionIds[0] + '-link').classList.remove('active');
+    }
+    window.addEventListener('load', updateCoverPhoto);
+    window.addEventListener('scroll', updateCoverPhoto);
+  </script>
   <body>
 
     <div id="photo-container">
-      <div class="site-wrapper cover-wrapper">
+      <div class="cover-wrapper" id="cover-wrapper-wedding-day">
+        <div class="site-wrapper-inner">
+          <div class="cover-container">
+            <div class="cover">
+              <h1 class="cover-heading">
+                <span class="first">Michael</span>
+                <span class="middle">&amp;</span>
+                <span class="second">Jackie</span>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cover-wrapper hidden" id="cover-wrapper-our-story">
+        <div class="site-wrapper-inner">
+          <div class="cover-container">
+            <div class="cover">
+              <h1 class="cover-heading">
+                <span class="first">Michael</span>
+                <span class="middle">&amp;</span>
+                <span class="second">Jackie</span>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cover-wrapper hidden" id="cover-wrapper-travel">
+        <div class="site-wrapper-inner">
+          <div class="cover-container">
+            <div class="cover">
+              <h1 class="cover-heading">
+                <span class="first">Michael</span>
+                <span class="middle">&amp;</span>
+                <span class="second">Jackie</span>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cover-wrapper hidden" id="cover-wrapper-faqs">
+        <div class="site-wrapper-inner">
+          <div class="cover-container">
+            <div class="cover">
+              <h1 class="cover-heading">
+                <span class="first">Michael</span>
+                <span class="middle">&amp;</span>
+                <span class="second">Jackie</span>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cover-wrapper hidden" id="cover-wrapper-registry">
         <div class="site-wrapper-inner">
           <div class="cover-container">
             <div class="cover">
@@ -34,11 +119,11 @@
       <div id="links">
         <nav>
           <ul class="nav mast-nav">
-            <li><a href="#wedding-day">WEDDING DAY</a></li>
-            <li><a href="#our-story">OUR STORY</a></li>
-            <li><a href="#travel">TRAVEL</a></li>
-            <li><a href="#faqs">FAQs</a></li>
-            <li><a href="#registry">REGISTRY</a></li>
+            <li><a id="wedding-day-link" href="#wedding-day">WEDDING DAY</a></li>
+            <li><a id="our-story-link" href="#our-story">OUR STORY</a></li>
+            <li><a id="travel-link" href="#travel">TRAVEL</a></li>
+            <li><a id="faqs-link" href="#faqs">FAQs</a></li>
+            <li><a id="registry-link" href="#registry">REGISTRY</a></li>
           </ul>
         </nav>
       </div>
@@ -68,7 +153,7 @@
             </div>
           </div>
           <div class="row" id="map">
-            <iframe class="mapview" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=9430+Fircrest+Ln,+San+Ramon,+CA+94583&amp;key=AIzaSyB9ePoqHL2N2xqOhy2H_7vjDokVDIq8-fE&amp;zoom=14" allowfullscreen></iframe>
+            <iframe class="mapview" frameborder="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3147.1592425946187!2d-121.93072838468936!3d37.73431367976691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fedb4445f2d53%3A0xfdad5b4ef793f93c!2s9430%20Fircrest%20Ln%2C%20San%20Ramon%2C%20CA%2094583!5e1!3m2!1sen!2sus!4v1583049999375!5m2!1sen!2sus" allowfullscreen=""></iframe>
           </div>
         </div>
       </div>
@@ -92,20 +177,19 @@
           <table id="travel-table">
             <tr>
               <td><img class="travel-icon" src="./img/hotel.svg"></td>
-              <td><h4>Hotel Name</h4></td>
+              <td><h4>Courtyard by Marriott San Ramon</h4></td>
             </tr>
             <tr>
               <td></td>
-              <td><a href="https://www.google.com/maps/dir//173+Old+Davis+Rd,+Davis,+CA+95616/@38.5353839,-121.8163234,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x808529124b081a1b:0x6ec0c6856a5db671!2m2!1d-121.7462834!2d38.5354048">
-               <p>
-                9430 Fircrest Ln<br>
+              <td><a href="https://goo.gl/maps/rDEDKE7LrBPvddHK9">
+                18090 San Ramon Valley Blvd<br>
                 San Ramon, CA 94583
-              </p>
-              </a></td>
+              </a><br>
+              <a href="tel:935-866-2900">(925) 866-2900</a></td>
             </tr>
             <tr>
               <td></td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+              <td>This hotel is a 10-minute drive to our venue. Let them know that you are booking for the Lim-Lew wedding to get a special rate!</td>
             </tr>
             <tr><td></td></tr>
             <tr><td></td></tr>
