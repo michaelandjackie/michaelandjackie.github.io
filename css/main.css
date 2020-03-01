@@ -1,0 +1,216 @@
+body {
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  position: relative;
+}
+h1, h2, h3, h4 {
+  font-family: 'Muli', sans-serif;
+  font-weight: 300;
+  margin: 0;
+  padding: 10px 0;
+}
+h2 {
+  text-align: center;
+  color: #001b7d;
+  color: #fff;
+}
+h3 {
+  color: #424242;
+  color: #F5EACF;
+  color: #fff;
+  padding: 0;
+  text-align: center;
+}
+h4 {
+  padding: 0;
+  text-align: left;
+}
+table {
+  color: #CEB793;
+  color: #fff;
+}
+a {
+  color: #fff;
+}
+#photo-container {
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 60%;
+}
+/*#photo-container .photo {
+  background-image: url('file:///Users/dominick/Desktop/michaelandjackie/img/tanaka_farms.jpg');
+  background-position: center center;
+  background-size: cover;
+  height: 100%;
+  position: absolute;;
+  width: 100%;
+}*/
+#links {
+  background-color: #444;
+  /*color: #e8dbca;*/
+  color: #fff;
+  position: fixed;
+  right: 0;
+  left: 60%;
+  height: 50px;
+}
+#links a {
+  color: #fff;
+  text-decoration: none;
+}
+nav {
+  height: 100%;
+}
+.mast-nav {
+  height: 100%;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+}
+/*#photo-container h1 {
+  bottom: 112px;
+  color: #fff;
+  font-size: 60px;
+  line-height: 70px;
+  left: 72px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  text-shadow: 2px 2px 4px #000;
+  .mast-nav {}
+}
+
+#photo-container h2 {
+  bottom: 72px;
+  color: #fff;
+  font-size: 24px;
+  line-height: 28px;
+  left: 72px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  text-align: right;
+  text-shadow: 2px 2px 4px #000;
+}*/
+#info {
+  background-color: #e8dbca;
+  background: url("../img/bg.png") repeat;
+  color: #212121;
+  margin-left: auto;
+  position: static;
+  width: 40%;
+}
+#wedding-day {
+  text-align: center;
+}
+#wedding-day h3 {
+  text-align: center;
+}
+#wedding-date {
+  font-family: CarolynaProBlack;
+  font-size: 48px;
+  margin: 12px 0;
+  padding: 0;
+  text-align: center;
+}
+#wedding-date span {
+  vertical-align: middle;
+}
+#day-of-week {
+  margin: 12px 0 0;
+}
+#day-of-month {
+  font-size: 96px;
+  line-height: 48px;
+  vertical-align: middle;
+}
+.wedding-date-separator {
+  margin: 0 -10px;
+}
+#wedding-venue {
+  font-size: 21px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+#travel-table {
+  width: 100%;
+  color: #000;
+  border-spacing: 10px;
+  border-collapse: separate;
+}
+#travel-table h4 {
+  margin: 0;
+}
+.travel-icon {
+  height: 30px;
+  width: 30px;
+}
+
+#faqs-table {
+  width: 100%;
+  color: #000;
+  border-spacing: 10px;
+  border-collapse: separate;
+}
+.faq {
+  font-weight: bold;
+}
+table h3 {
+  margin: 0;
+}
+
+table {
+  /*text-align: center;*/
+  vertical-align: top;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.wedding-day-table-header-title-td {
+  padding-right: 20px;
+}
+.wedding-day-table-header-line-td {
+  width: 100%;
+}
+.wedding-day-table-header-line {
+  background-color: rgb(232, 232, 232);
+  display: block;
+  height: 1px;
+  width: 100%;
+}
+
+#event-map {
+  margin: 10px 0;
+}
+.section {
+  /*border-bottom: 1px solid #E0E0E0;*/
+  min-height: 100vh;
+}
+.section-container {
+  padding: 48px;
+}
+.section-header {
+  margin: 12px 0;
+}
+
+@media only screen and (max-width: 960px) {
+  #photo-container {
+    width: 100%;
+    position: relative;
+    top: 50px;
+  }
+  #info {
+    position: relative;
+    width: 100%;
+  }
+  #links {
+    left: 0;
+    width: 100%;
+    top: 0;
+  }
+}

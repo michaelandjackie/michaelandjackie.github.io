@@ -1,0 +1,16 @@
+html {
+  color: goldenrod;
+}
+body {
+  background: darkblue;
+  background-image: url("../background/bg_twinkling.gif");
+}
+#our-wedding {
+  width: 25%;
+}
+.bird {
+  width: 10%;
+}
+#bird-2 {
+  transform: rotate3d(0, 1, 0, 180deg);
+}
