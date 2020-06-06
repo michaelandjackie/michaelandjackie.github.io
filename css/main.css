@@ -86,20 +86,24 @@ table h3 {
   background: url("../img/engage_crop.jpg") center;
   background-size: cover;
 }
+#cover-wrapper-rsvp {
+  background: url("../img/rsvp_crop.jpg") center;
+  background-size: cover;
+}
 #cover-wrapper-our-story {
-  background: url("../img/tanaka_farms.jpg") center;
+  background: url("../img/story.jpg") center;
   background-size: cover;
 }
 #cover-wrapper-travel {
-  background: url("../img/doges.jpg") center;
+  background: url("../img/travel.jpg") center;
   background-size: cover;
 }
 #cover-wrapper-faqs {
-  background: url("../img/klondike.jpg") center;
+  background: url("../img/faqs.jpg") center;
   background-size: cover;
 }
 #cover-wrapper-registry {
-  background: url("../img/huntington.jpg") center;
+  background: url("../img/registry.jpg") center;
   background-size: cover;
 }
 
@@ -256,9 +260,9 @@ nav {
   margin: 0;
 }
 
-.travel-icon {
-  height: 30px;
-  width: 30px;
+.table-icon {
+  height: 38px;
+  width: 38px;
 }
 
 /* FAQs */
@@ -270,6 +274,17 @@ nav {
 }
 .faq {
   font-weight: bold;
+}
+
+/* REGISTRY */
+#registry-table {
+  width: 100%;
+  color: #000;
+  border-spacing: 10px;
+  border-collapse: separate;
+}
+#registry-table h4 {
+  margin: 0;
 }
 
 @media only screen and (max-width: 960px) {

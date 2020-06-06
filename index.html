@@ -26,11 +26,12 @@
       document.getElementById(sectionId + '-link').classList.remove('active');
     }
     function updateCoverPhoto() {
-      var sectionIds = ['wedding-day', 'our-story', 'travel', 'faqs', 'registry'];
+      var sectionIds = ['wedding-day', 'rsvp', 'our-story', 'travel', 'faqs', 'registry'];
       for (var i = sectionIds.length - 1; i >= 0; i--) {
         var sectionId = sectionIds[i];
         var section = document.getElementById(sectionId);
-        if (section.getClientRects()[0].y <= 50) {
+        console.log(sectionId, section.getClientRects()[0]);
+        if (section.getClientRects()[0].y <= 150) {
           activateSection(sectionId);
           for (var j = 0; j < sectionIds.length; j++) {
             if (j == i) {
@@ -50,6 +51,19 @@
 
     <div id="photo-container">
       <div class="cover-wrapper" id="cover-wrapper-wedding-day">
+        <div class="site-wrapper-inner">
+          <div class="cover-container">
+            <div class="cover">
+              <h1 class="cover-heading">
+                <span class="first">Michael</span>
+                <span class="middle">&amp;</span>
+                <span class="second">Jackie</span>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cover-wrapper" id="cover-wrapper-rsvp">
         <div class="site-wrapper-inner">
           <div class="cover-container">
             <div class="cover">
@@ -120,6 +134,7 @@
         <nav>
           <ul class="nav mast-nav">
             <li><a id="wedding-day-link" href="#wedding-day">WEDDING DAY</a></li>
+            <li><a id="rsvp-link" href="#rsvp">RSVP</a></li>
             <li><a id="our-story-link" href="#our-story">OUR STORY</a></li>
             <li><a id="travel-link" href="#travel">TRAVEL</a></li>
             <li><a id="faqs-link" href="#faqs">FAQs</a></li>
@@ -141,7 +156,7 @@
                   <span class="wedding-date-separator">•</span>
                   <span>2020</span>
                 </h1>
-                <h3>6:00 PM</h3>
+                <h3>5:30 PM</h3>
               </div>
             </div>
             <div id="wedding-venue">
@@ -157,17 +172,26 @@
           </div>
         </div>
       </div>
+      <div class="section" id="rsvp">
+        <div class="section-container">
+          <h3 class="section-header">RSVP</h3>
+
+          <p>Please RSVP using <a href="https://forms.gle/Bbg51zaVAqY84Xuz5">our Google Form</a> by August 22, 2020.</p>
+
+          <p>Only 1 RSVP is needed per invitation.</p>
+
+          <p>Thank you and we hope to see you there!</p>
+        </div>
+      </div>
       <div class="section" id="our-story">
         <div class="section-container">
           <h3 class="section-header">OUR STORY</h3>
 
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>We met on the first day of optometry school at Western University of Health Sciences.  During an orientation week ice breaker, we were asked to stand up when different activities that interested us were called out.  Jackie noticed that Michael (who was sitting in front of her and hadn’t noticed her yet) was standing up A LOT.  Rather than feeling impressed, she was intrigued by how arrogant he seemed.</p>
 
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>At the next break, Jackie noticed Michael talking to some people (probably bragging about himself some more) and went over to see what he was about.  She yelled, "You’re that guy who does everything!" As soon as Michael saw her, he was smitten.  "Wow, look at this pretty girl so impressed by all of my activities!"  Fortunately, we became fast friends and spent the rest of the day together, talking, laughing, and getting to know each other.</p>
 
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>A few days later, Michael asked Jackie out.  Jackie said no, explaining that she wanted to focus on school.  However, rather than being awkward, we remained close friends, studying and hanging out together as usual.  A few weeks after that, Jackie realized Michael was an "angel from the heavens" and not arrogant after all.  We began dating and have been happy in love ever since.</p>
         </div>
       </div>
       <div class="section" id="travel">
@@ -176,25 +200,48 @@
 
           <table id="travel-table">
             <tr>
-              <td><img class="travel-icon" src="./img/hotel.svg"></td>
-              <td><h4>Courtyard by Marriott San Ramon</h4></td>
+              <td><img class="table-icon" src="./img/hotel.svg"></td>
+              <td><h4>Hyatt House San Ramon</h4></td>
             </tr>
             <tr>
               <td></td>
-              <td><a href="https://goo.gl/maps/rDEDKE7LrBPvddHK9">
-                18090 San Ramon Valley Blvd<br>
-                San Ramon, CA 94583
-              </a><br>
-              <a href="tel:935-866-2900">(925) 866-2900</a></td>
+              <td>
+                <a href="https://goo.gl/maps/m1KKHGVCQs3vvxTC6">
+                  2323 San Ramon Valley Blvd<br>
+                  San Ramon, CA 94583
+                </a><br>
+                <a href="tel:925-743-1882">(925) 743-1882</a>
+              </td>
             </tr>
             <tr>
               <td></td>
-              <td>This hotel is a 10-minute drive to our venue. Let them know that you are booking for the Lim-Lew wedding to get a special rate!</td>
+              <td>
+                <p>This hotel is a 10-15 minute drive to our venue and we have a group block rate with the hotel!</p>
+
+                <p>Rates:</p>
+                <ul>
+                  <li>Studio Suite: $139/night</li>
+                  <li>One Bedroom Suite: $159/night</li>
+                </ul>
+                <p>There are two ways you can book a room:</p>
+                <ol>
+                  <li>You can call <a href="tel:888-591-1234">(888) 591-1234</a> and either ask for the Lew/Lim Wedding group rate or use our group code: G-LWLM</li>
+                  <li>You can book online by using <a href="https://sanramon.house.hyatt.com/en/hotel/home.html?corp_id=G-LWLM">this link</a>. The group code will automatically populate in the appropriate field, titled "Corporate/Group."</li>
+                </ol>
+                <p>A few friendly reminders:</p>
+                <ol>
+                  <li>Group rates are available Thursday through Sunday nights only. Monday through Wednesday nights are subject to higher rates.</li>
+                  <li>If a reservation needs to be cancelled, the guest must notify the hotel 48 hours prior to the day of arrival to avoid a cancellation fee.</li>
+                  <li>Check-in time is at 3:00pm</li>
+                  <li>Check-out time is at 12:00pm</li>
+                  <li>Reservations must be made before 8/28/20</li>
+                </ol>
+              </td>
             </tr>
             <tr><td></td></tr>
             <tr><td></td></tr>
             <tr>
-              <td><img class="travel-icon" src="./img/flight.svg"></td>
+              <td><img class="table-icon" src="./img/flight.svg"></td>
               <td><h4>Airport Information</h4></td>
             </tr>
             <tr>
@@ -203,7 +250,7 @@
             </tr>
             <tr>
               <td></td>
-              <td>If you are planning on exploring the Bay Area, San Francisco International Airport (SFO) is another good option.</td>
+              <td>If you are planning on exploring the Bay Area, San Francisco International Airport (SFO) and San Jose International Airport (SJC) are other good options.</td>
             </tr>
           </table>
         </div>
@@ -215,41 +262,81 @@
           <table id="faqs-table">
             <tr>
               <td class="faq"><h4>Q:</h4></td>
+              <td><h4>COVID-19 Updates</h4></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <p>At this time, we have been communicating with the venue and we don’t expect to have to reschedule the wedding. We have been advised to move forward with planning as usual until we hear otherwise.</p>
+
+                <p>It is uncertain what potential guidelines and/or requirements will be provided by the CDC, the state of California, and Contra Costa County.  The venue has hypothetical contingency plans but until we know the exact rules, they are not able to finalize anything. The venue receives information at the same time everyone else does and so we unfortunately do not have any kind of inside information.</p>
+
+                <p>We expect to learn more about the rules for group gatherings soon and will continue to keep everyone updated as we maintain discussions with the venue. Thank you for your patience and please continue to stay safe!</p>
+              </td>
+            </tr>
+
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+
+            <tr>
+              <td class="faq"><h4>Q:</h4></td>
               <td><h4>When is the RSVP deadline?</h4></td>
             </tr>
             <tr>
               <td></td>
-              <td>?? ??, 2020</td>
+              <td>
+                <p>August 22, 2020.</p>
+
+                <p>Please RSVP using <a href="https://forms.gle/Bbg51zaVAqY84Xuz5">our Google Form</a>. Only 1 RSVP is needed per invitation.</p>
+              </td>
             </tr>
+
             <tr><td></td></tr>
             <tr><td></td></tr>
+
             <tr>
               <td class="faq"><h4>Q:</h4></td>
               <td><h4>Where should I park?</h4></td>
             </tr>
             <tr>
               <td></td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+              <td>Parking is right next to the entrance of the venue. For our guests with limited mobility, cars are able to drop off guests right at the entrance. </td>
             </tr>
+
             <tr><td></td></tr>
             <tr><td></td></tr>
+
             <tr>
               <td class="faq"><h4>Q:</h4></td>
               <td><h4>What should I wear?</h4></td>
             </tr>
             <tr>
               <td></td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+              <td>Semi-formal attire.</td>
             </tr>
+
             <tr><td></td></tr>
             <tr><td></td></tr>
+
+            <tr>
+              <td class="faq"><h4>Q:</h4></td>
+              <td><h4>What are the wedding colors?</h4></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Our wedding colors are Slate Blue, Yellow, and White.</td>
+            </tr>
+
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+
             <tr>
               <td class="faq"><h4>Q:</h4></td>
               <td><h4>What if I have a dietary restriction?</h4></td>
             </tr>
             <tr>
               <td></td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+              <td>Please include details of any dietary restrictions or food allergies when you RSVP using <a href="https://forms.gle/Bbg51zaVAqY84Xuz5">our Google Form</a>.</td>
             </tr>
           </table>
         </div>
@@ -257,7 +344,33 @@
       <div class="section" id="registry">
         <div class="section-container">
           <h3 class="section-header">REGISTRY</h3>
-          <p>Thank you so much for celebrating with us on our wedding day! If you'd like to contribute to our new life together through gifts, we are registered through Zola. For Venmo gifts, you can find us at @Michael-J-Lim.</p>
+          <p>Thank you so much for celebrating with us on our wedding day! Gifts are not necessary as we are already happy to have you join us, but if you'd like to contribute to our new life together, we would be honored and grateful.</p>
+
+          <table id="registry-table">
+            <tr>
+              <td><img class="table-icon" src="./img/registry.svg"></td>
+              <td><h4>Registry</h4></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <p>For your convenience we have registered a list with Amazon, which can be viewed online <a href="https://www.amazon.com/wedding/michael-lim-jackie-lew-san-ramon-september-2020/registry/2F398CH2F6BD">here</a>.
+              </td>
+            </tr>
+
+            <tr>
+              <td><img class="table-icon" src="./img/honeyfund.svg"></td>
+              <td><h4>Honeyfund</h4></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <p>If you would like to contribute to our honeyfund to help us with our honeymoon and future home together, you can find us on Venmo: <a href="https://venmo.com/Michael-J-Lim">@Michael-J-Lim</a>.</p>
+              </td>
+            </tr>
+          </table>
+
+          <p>Thank you so much for your kindness and generosity, we can’t wait to see you!</p>
         </div>
       </div>
     </div>
