@@ -87,7 +87,7 @@ table h3 {
   background-size: cover;
 }
 #cover-wrapper-rsvp {
-  background: url("../img/rsvp_crop.jpg") center;
+  background: url("../img/rsvp_crop_crop.jpg") center;
   background-size: cover;
 }
 #cover-wrapper-our-story {
@@ -192,13 +192,17 @@ nav {
   width: 40%;
 }
 .section {
+  display: table;
   min-height: 100vh;
+  width: 100%;
 }
 .section-container {
+  display: table-cell;
   padding: 54px 48px 48px;
+  vertical-align: middle;
 }
 .section-header {
-  margin: 12px 0;
+  margin: 0 0 24px;
 }
 
 /* Wedding Day */
