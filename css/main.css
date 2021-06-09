@@ -98,6 +98,10 @@ table h3 {
   background: url("../img/travel.jpg") center;
   background-size: cover;
 }
+#cover-wrapper-covid {
+  background: url("../img/covid.jpg") center;
+  background-size: cover;
+}
 #cover-wrapper-faqs {
   background: url("../img/faqs.jpg") center;
   background-size: cover;

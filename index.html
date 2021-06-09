@@ -26,7 +26,7 @@
       document.getElementById(sectionId + '-link').classList.remove('active');
     }
     function updateCoverPhoto() {
-      var sectionIds = ['wedding-day', 'rsvp', 'our-story', 'travel', 'faqs', 'registry'];
+      var sectionIds = ['wedding-day', 'rsvp', 'our-story', 'travel', 'covid', 'faqs', 'registry'];
       for (var i = sectionIds.length - 1; i >= 0; i--) {
         var sectionId = sectionIds[i];
         var section = document.getElementById(sectionId);
@@ -102,6 +102,19 @@
           </div>
         </div>
       </div>
+      <div class="cover-wrapper hidden" id="cover-wrapper-covid">
+        <div class="site-wrapper-inner">
+          <div class="cover-container">
+            <div class="cover">
+              <h1 class="cover-heading">
+                <span class="first">Michael</span>
+                <span class="middle">&amp;</span>
+                <span class="second">Jackie</span>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="cover-wrapper hidden" id="cover-wrapper-faqs">
         <div class="site-wrapper-inner">
           <div class="cover-container">
@@ -137,6 +150,7 @@
             <li><a id="rsvp-link" href="#rsvp">RSVP</a></li>
             <li><a id="our-story-link" href="#our-story">OUR STORY</a></li>
             <li><a id="travel-link" href="#travel">TRAVEL</a></li>
+            <li><a id="covid-link" href="#covid">COVID-19 UPDATES</a></li>
             <li><a id="faqs-link" href="#faqs">FAQs</a></li>
             <li><a id="registry-link" href="#registry">REGISTRY</a></li>
           </ul>
@@ -234,7 +248,7 @@
                   <li>If a reservation needs to be cancelled, the guest must notify the hotel 48 hours prior to the day of arrival to avoid a cancellation fee.</li>
                   <li>Check-in time is at 3:00pm</li>
                   <li>Check-out time is at 12:00pm</li>
-                  <li>Reservations must be made before 8/28/20</li>
+                  <li>Reservations must be made before 8/28/21</li>
                 </ol>
               </td>
             </tr>
@@ -253,6 +267,36 @@
               <td>If you are planning on exploring the Bay Area, San Francisco International Airport (SFO) and San Jose International Airport (SJC) are other good options.</td>
             </tr>
           </table>
+        </div>
+      </div>
+      <div class="section" id="covid">
+        <div class="section-container">
+          <h3 class="section-header">COVID-19 UPDATES</h3>
+
+
+          <p>In order to help everyone feel safe and comfortable, here are measures that the
+venue will be taking:</p>
+
+          <ul>
+            <li>Masks and hand sanitizer will be provided at the venue.
+              <ul>
+                <li>Our Self-Care Station will include:
+                  <ul>
+                    <li>Surgical masks</li>
+                    <li>Hand sanitizer</li>
+                    <li>Sunscreen</li>
+                    <li>Off! Insect repellent</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>All employees at the venue will be wearing masks.</li>
+            <li>Dinner buffet will be served by masked and gloved employees stationed behind plastic barriers.</li>
+          </ul>
+
+          <p>While masks will be provided, they will be optional and not required.</p>
+          <p>Complete COVID-19 vaccination at least 2 weeks prior to the event is highly recommended.</p>
+          <p>At this time the venue is anticipating to welcome our complete guest list once state restrictions are lifted on June 15th.</p>
         </div>
       </div>
       <div class="section" id="faqs">
