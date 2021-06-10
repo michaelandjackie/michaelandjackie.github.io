@@ -154,36 +154,85 @@ table h3 {
   right: 0;
   left: 60%;
   height: 54px;
-}
-#links li {
-  display: inline-block;
-  line-height: 12px;
-  padding-left: 10px;
-  padding-right: 10px;
+  display: none;
+  font-family: 'Muli', sans-serif;
 }
 #links a {
-  color: #fff;
-  padding-right: 0;
-  padding-left: 0;
-  font-family: 'Muli', sans-serif;
-  font-size: 16px;
+  text-decoration: none;
 }
-#links a.active,
-#links a.active:hover,
-#links a.active:focus {
-  font-size: 17px;
+#links a div {
+  color: #fff;
+  padding: 8px;
+  padding-left: 36px;
+  font-size: 14px;
+  text-decoration: none;
+}
+#links a.active div {
+  color: #ccc;
+}
+
+#links a:hover div,
+#links a:focus div {
+  background-color: #ccc;
+  color: #357;
   font-weight: bold;
 }
 
-nav {
-  height: 100%;
+.navbar {
+  overflow: hidden;
+  background-color: #357;
 }
 
-.mast-nav {
-  height: 100%;
-  vertical-align: middle;
-  align-items: center;
-  justify-content: center;
+#dropdown {
+  width: 100%;
+}
+
+#dropdown-button {
+  border: none;
+  outline: none;
+  color: white;
+  padding: 8px 0;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  display: flex;
+  width: 100%;
+}
+
+#dropdown-button span {
+  display: none;
+  flex: 1 1 0;
+  text-align: left;
+  line-height: 32px;
+}
+#dropdown-button span.active {
+  padding-left: 4px;
+  display: inline-block;
+}
+
+#dropdown-button svg {
+  margin: 4px;
+}
+
+#dropdown-button #drop-up {
+  display: none;
+}
+#dropdown-button.active #drop-up {
+  display: inline-block;
+}
+
+#dropdown-button #drop-down {
+  display: inline-block;
+}
+#dropdown-button.active #drop-down {
+  display: none;
+}
+
+#dropdown-content {
+  display: none;
+}
+#dropdown-content.active {
+  display: block;
 }
 
 /* Info */
@@ -202,7 +251,7 @@ nav {
 }
 .section-container {
   display: table-cell;
-  padding: 54px 48px 48px;
+  padding: 72px 48px 48px;
   vertical-align: middle;
 }
 .section-header {
@@ -411,7 +460,7 @@ nav {
     line-height: 36px;
   }
   .section-container {
-    padding: 54px 36px 36px;
+    padding: 72px 36px 36px;
   }
 }
 

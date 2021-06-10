@@ -17,6 +17,7 @@
         coverWrapper.classList.remove('hidden');
       }
       document.getElementById(sectionId + '-link').classList.add('active');
+      document.getElementById(sectionId + '-drop-label').classList.add('active');
     }
     function deactivateSection(sectionId) {
       var coverWrapper = document.getElementById('cover-wrapper-' + sectionId);
@@ -24,13 +25,13 @@
         coverWrapper.classList.add('hidden');
       }
       document.getElementById(sectionId + '-link').classList.remove('active');
+      document.getElementById(sectionId + '-drop-label').classList.remove('active');
     }
     function updateCoverPhoto() {
       var sectionIds = ['wedding-day', 'rsvp', 'our-story', 'travel', 'covid', 'faqs', 'registry'];
       for (var i = sectionIds.length - 1; i >= 0; i--) {
         var sectionId = sectionIds[i];
         var section = document.getElementById(sectionId);
-        console.log(sectionId, section.getClientRects()[0]);
         if (section.getClientRects()[0].y <= 150) {
           activateSection(sectionId);
           for (var j = 0; j < sectionIds.length; j++) {
@@ -43,8 +44,26 @@
         }
       }
       document.getElementById(sectionIds[0] + '-link').classList.remove('active');
+      document.getElementById(sectionIds[0] + '-drop-label').classList.remove('active');
     }
-    window.addEventListener('load', updateCoverPhoto);
+    function toggleClass(elementId, className) {
+      var element = document.getElementById(elementId);
+      if(element.classList.contains(className)) {
+        element.classList.remove(className);
+      } else {
+        element.classList.add(className);
+      }
+
+    }
+    function toggleDropDown() {
+      toggleClass('dropdown-content', 'active');
+      toggleClass('dropdown-button', 'active');
+    }
+    window.addEventListener('load', () => {
+      updateCoverPhoto();
+      document.getElementById('dropdown').onclick = toggleDropDown;
+      document.getElementById('links').style.display = 'block';
+    });
     window.addEventListener('scroll', updateCoverPhoto);
   </script>
   <body>
@@ -144,17 +163,30 @@
     </div>
     <div id="info">
       <div id="links">
-        <nav>
-          <ul class="nav mast-nav">
-            <li><a id="wedding-day-link" href="#wedding-day">WEDDING DAY</a></li>
-            <li><a id="rsvp-link" href="#rsvp">RSVP</a></li>
-            <li><a id="our-story-link" href="#our-story">OUR STORY</a></li>
-            <li><a id="travel-link" href="#travel">TRAVEL</a></li>
-            <li><a id="covid-link" href="#covid">COVID-19 UPDATES</a></li>
-            <li><a id="faqs-link" href="#faqs">FAQs</a></li>
-            <li><a id="registry-link" href="#registry">REGISTRY</a></li>
-          </ul>
-        </nav>
+        <div class="navbar">
+          <div id="dropdown">
+            <button id="dropdown-button">
+              <svg id="drop-up" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#fff"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14l-6-6z"/></svg>
+              <svg id="drop-down" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#fff"><path d="M24 24H0V0h24v24z" fill="none" opacity=".87"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z"/></svg>
+              <span id="wedding-day-drop-label">WEDDING DAY</span>
+              <span id="rsvp-drop-label">RSVP</span>
+              <span id="our-story-drop-label">OUR STORY</span>
+              <span id="travel-drop-label">TRAVEL</span>
+              <span id="covid-drop-label">COVID-19 UPDATES</span>
+              <span id="faqs-drop-label">FAQs</span>
+              <span id="registry-drop-label">REGISTRY</span>
+            </button>
+            <div id="dropdown-content">
+              <a id="wedding-day-link" href="#wedding-day"><div>WEDDING DAY</div></a>
+              <a id="rsvp-link" href="#rsvp"><div>RSVP</div></a>
+              <a id="our-story-link" href="#our-story"><div>OUR STORY</div></a>
+              <a id="travel-link" href="#travel"><div>TRAVEL</div></a>
+              <a id="covid-link" href="#covid"><div>COVID-19 UPDATES</div></a>
+              <a id="faqs-link" href="#faqs"><div>FAQs</div></a>
+              <a id="registry-link" href="#registry"><div>REGISTRY</div></a>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="section" id="wedding-day">
@@ -272,10 +304,7 @@
       <div class="section" id="covid">
         <div class="section-container">
           <h3 class="section-header">COVID-19 UPDATES</h3>
-
-
-          <p>In order to help everyone feel safe and comfortable, here are measures that the
-venue will be taking:</p>
+          <p>In order to help everyone feel safe and comfortable, here are measures that the venue will be taking:</p>
 
           <ul>
             <li>Masks and hand sanitizer will be provided at the venue.
